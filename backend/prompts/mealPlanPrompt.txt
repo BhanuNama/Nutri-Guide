@@ -1,0 +1,71 @@
+Generate EXACTLY {{planDuration}} days of Indian VEGETARIAN meals ({{mealPerDay}} meals/day) with:
+
+USER PROFILE:
+- Age: {{age}}
+- Gender: {{gender}}
+- Weight: {{weight}}kg
+- Height: {{height}}cm
+- Activity: {{activityLevel}}
+- Goal: {{fitnessGoal}}
+- Strict Diet: {{foodType}} (MUST BE 100% VEGETARIAN)
+- Allergies: {{restrictionsAndAllergies || 'None'}}
+
+STRICT VEGETARIAN RULES:
+1. ABSOLUTELY NO meat, fish, poultry, eggs, or animal flesh
+2. Only allowed:
+   • Dairy (milk, yogurt, paneer)
+   • Plant-based foods (grains, legumes, vegetables, fruits, nuts)
+3. Reject any recipe containing:
+   - Chicken, fish, eggs, meat, seafood
+   - Any non-vegetarian ingredients
+   - Hidden animal products (gelatin, fish sauce, etc.)
+
+MEAL REQUIREMENTS PER DAY:
+• {{mealPerDay}} complete meals (Breakfast, Lunch, Snack, Dinner)
+• Each meal must include:
+  - type (e.g., "Breakfast")
+  - dishName (traditional Indian name)
+  - description (20+ words)
+  - cookingMethod
+  - nutrition (calories, protein, carbs, fat)
+  - 3 keyIngredients (must be vegetarian)
+
+FAILSAFE TEMPLATE (use if constraints can't be met):
+{
+  "days": [
+    {
+      "dayNumber": 1,
+      "meals": [
+        {
+          "type": "Breakfast",
+          "dishName": "Vegetable Upma",
+          "description": "Savory semolina porridge with carrots, peas and mild spices, cooked in water or milk",
+          "cookingMethod": "Stir-fried",
+          "nutrition": {
+            "calories": 300,
+            "protein": 8,
+            "carbs": 45,
+            "fat": 7
+          },
+          "keyIngredients": ["semolina", "vegetables", "cumin"]
+        }
+      ]
+    }
+  ]
+}
+
+OUTPUT FORMAT:
+{
+  "days": [
+    { /* Day 1 - ALL {{mealPerDay}} MEALS */ },
+    { /* Day 2 */ },
+    // ... MUST INCLUDE ALL {{planDuration}} DAYS
+  ]
+}
+
+VALIDATION CHECK:
+Before responding, verify:
+1. ZERO non-vegetarian items
+2. All {{planDuration}} days present
+3. Each day has exactly {{mealPerDay}} meals
+4. Nutrition values are calculated

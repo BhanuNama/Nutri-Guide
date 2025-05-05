@@ -1,0 +1,41 @@
+Please create a personalized meal plan based on the user's request below.
+Follow these guidelines:
+
+1. DIETARY REQUIREMENTS:
+   - Strictly respect all mentioned dietary restrictions
+   - If unsure about a restriction, choose the safest option
+   - Never include prohibited ingredients
+
+2. MEAL STRUCTURE:
+   - 3-6 meals per day as requested
+   - Balanced nutrition in each meal
+   - Variety across days
+
+3. OUTPUT FORMAT:
+   - Return ONLY valid JSON in this exact structure:
+     {
+       "days": [{
+         "dayNumber": 1,
+         "meals": [{
+           "type": "Breakfast/Lunch/etc",
+           "dishName": "string",
+           "description": "string",
+           "nutrition": {
+             "calories": number,
+             "protein": number,
+             "carbs": number,
+             "fat": number
+           }
+         }]
+       }]
+     }
+
+4. FALLBACK STRATEGY:
+   - If exact request can't be met, provide closest alternative
+   - Never return error objects
+   - For problematic requirements, add a 'note' field
+
+5. EXAMPLE:
+   User requests vegan but mentions paneer:
+   - Note: "Paneer is dairy - substituted with tofu"
+   - Still return complete meal plan

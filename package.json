@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.5.0",
+    "framer-motion": "^12.9.2",
+    "react-toastify": "^11.0.5",
+    "recharts": "^2.15.3"
+  },
+  "devDependencies": {
+    "@types/recharts": "^1.8.29"
+  }
+}
