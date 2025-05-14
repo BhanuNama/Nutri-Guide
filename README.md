@@ -48,5 +48,25 @@ NutriGuide is an AI-driven MERN stack web application that offers **personalized
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/yourusername/nutri-guide.git
+   git clone https://github.com/BhanuNama/Nutri-Guide.git
    cd nutri-guide
+2.** Install dependencies**
+
+For backend:
+cd backend
+npm install
+
+For frontend:
+cd ../frontend
+npm install
+
+Set up environment variables
+
+Create .env files in both /backend and /frontend as needed.
+
+Run the app
+
+Backend:
+npm run start
+Frontend:
+npm run dev
